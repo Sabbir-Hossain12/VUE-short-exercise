@@ -1,29 +1,28 @@
 <script setup>
 
 import {reactive} from "vue";
-import {invData} from "@/invData.js";
 
-// let invData = reactive(
-//     {
-//       invoiceID: "",
-//       billingAddress: "",
-//       shippingAddress: "",
-//       date: "",
-//       dueDate: "",
-//       poNumber: "",
-//       items: [{
-//         name: "",
-//         quantity: "",
-//         rate: "",
-//         amount: ""
-//       }],
-//       notes: "",
-//       terms: "",
-//       subTotal: "",
-//       tax: "",
-//       total: ""
-//     }
-// );
+let invData = reactive(
+    {
+      invoiceID: "",
+      billingAddress: "",
+      shippingAddress: "",
+      date: "",
+      dueDate: "",
+      poNumber: "",
+      items: [{
+        name: "",
+        quantity: "",
+        rate: "",
+        amount: ""
+      }],
+      notes: "",
+      terms: "",
+      subTotal: "",
+      tax: "",
+      total: ""
+    }
+);
 
 function addItem() {
 
@@ -167,7 +166,7 @@ function calcTotal()
                 />
               </div>
             </td>
-            <!--            <td class="px-3 py-2.5 text-right text-gray-700 whitespace-nowrap">$ {{ rowAmount(item.quantity,item.rate,index) }}</td>-->
+<!--            <td class="px-3 py-2.5 text-right text-gray-700 whitespace-nowrap">$ {{ rowAmount(item.quantity,item.rate,index) }}</td>-->
             <td class="px-3 py-2.5 text-right text-gray-700 whitespace-nowrap">$ {{ item.amount = item.quantity * item.rate }}</td>
             <td class="px-3 py-2.5 text-right text-gray-700 whitespace-nowrap">
               <button class="bg-red-600 text-white text-xs font-semibold px-3 py-1.5 rounded hover:bg-red-700" @click="removeItem(index)">X</button>
@@ -185,9 +184,9 @@ function calcTotal()
       </div>
 
 
-<!--      <div>-->
-<!--        {{ invData }}-->
-<!--      </div>-->
+      <div>
+        {{ invData }}
+      </div>
 
       <!-- + Line Item Button -->
 
